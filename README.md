@@ -1,10 +1,10 @@
 Table of Content
  * [Abstract](#Abstract)
- * [Data Source ](#DataSource)
- * [Data Cleaning ](#DataCleaning)
- * [Some Cool Data Analysis Images ](#SomeCoolDataAnalysisImages)
- * [Evaluation and Training of Models ](#EvaluationandTrainingofModels)
- * [Outcome ](#Outcome)
+ * [Data Source ](#Data-Source)
+ * [Data Cleaning ](#Data-Cleaning)
+ * [Some Cool Data Analysis Images ](#Some-Cool-Data-Analysis-Images)
+ * [Evaluation and Training of Models ](#Evaluation-and-Training-of-Models)
+ * [Outcome](#Outcome)
 
 # Abstract
 
@@ -26,9 +26,6 @@ Forest Fires are becoming a bigger problem and a recent survey shows that at lea
 ### Burnt Area with respect to Months
 
 <img width="258" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/1b4544d7-e97c-4bbf-bf76-d5a4aa4c4c09">
-```
-hrf
-```
 
 ### Visualization of the Area Burnt in the X, Y Co-ordinates
 
