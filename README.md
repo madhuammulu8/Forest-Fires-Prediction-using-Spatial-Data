@@ -1,9 +1,9 @@
 Table of Content
  * [Abstract](#Abstract)
- * [Data Source ](#Data-Source)
- * [Data Cleaning ](#Data-Cleaning)
- * [Some Cool Data Analysis Images ](#Some-Cool-Data-Analysis-Images)
- * [Evaluation and Training of Models ](#Evaluation-and-Training-of-Models)
+ * [Data Source](#Data-Source)
+ * [Data Cleaning](#Data-Cleaning)
+ * [Some Cool Data Analysis Images](#Some-Cool-Data-Analysis-Images)
+ * [Evaluation and Training of Models](#Evaluation-and-Training-of-Models)
  * [Outcome](#Outcome)
 
 # Abstract
