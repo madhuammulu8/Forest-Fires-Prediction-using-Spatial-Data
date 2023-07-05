@@ -4,7 +4,15 @@ Table of Content
  * [Data Cleaning](#Data-Cleaning)
  * [Some Cool Data Analysis Images](#Some-Cool-Data-Analysis-Images)
    * [Burnt Area with respect to Months](#Burnt-Area-with-respect-to-Months)
+   * [Visualization of the Area Burnt in the X, Y Co-ordinates](#Visualization-of-the-Area-Burnt-in-the-X,-Y-Coordinates)
+   * [Burnt Area with respect to Temperature](#Burnt-Area-with-respect-to-Temperature)
  * [Evaluation and Training of Models](#Evaluation-and-Training-of-Models)
+   * [Training and Testing Data](#Training-and-Testing-Data)
+   * [SVM](#SVM)
+   * [Decision Tree Classifier](#Decision-Tree-Classifier)
+   * [Random Forest Classifier](#Random-Forest-Classifier)
+   * [Gaussian NB](#Gaussian-NB)
+   * [Voting Classifier](#Voting-Classifier)
  * [Outcome](#Outcome)
 
 # Abstract
@@ -28,7 +36,7 @@ Forest Fires are becoming a bigger problem and a recent survey shows that at lea
 
 <img width="258" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/1b4544d7-e97c-4bbf-bf76-d5a4aa4c4c09">
 
-### Visualization of the Area Burnt in the X, Y Co-ordinates
+### Visualization of the Area Burnt in the X, Y Coordinates
 
 <img width="221" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/db5147bf-1bd2-48be-8368-0cb212741384">
 
