@@ -52,33 +52,118 @@ We tried different machine learning algorithms such as SVM, Decision Tree Classi
 
 We used sklearn to train and test the data where formatted data because we cannot use the string(month and day feature) and also we can see we have dropped the area feature since we are going to use it as test data
 
-<img width="481" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/ac810aeb-71b9-415b-9703-85896438a50f">
+```
+from sklearn.model_selection import train_test_split
+X=df
+X_new_month=recon(X)
+X['month']=X_new_month
+X_new_days=recon2(X)
+X['day']=X_new_days
+y = X['area']
+y1=ar_cat(X)
+y=y1
+X = X.drop('area', axis=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, shuffle=True, random_state=1)
+
+```
 
 ### SVM: 
 Support vector machines are supervised machine learning algorithm which helps in analyzing and classifying the data we got an F1 score for the first classifier for the SVM about 64 for testing data
 
-<img width="307" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/78de2bed-0c2f-484b-9c73-5a6c7c328963">
+```
+from sklearn import svm
+model = svm.SVC(kernel='poly')
+model.fit(X_train,y_train)
+
+test_predicted = model.predict(X_test)
+train_predicted = model.predict(X_train)
+
+from sklearn.metrics import accuracy_score
+
+train_accuracy = f1_score(y_train, train_predicted,average=None)
+test_accuracy = f1_score(y_test, test_predicted,average=None)
+print('SVM training accuracy is', train_accuracy)
+print('SVM test accuracy is', test_accuracy)
+```
 
 ### Decision Tree Classifier: 
 It is one of the most powerful algorithms and we got an F1 score of 1st classifier 54 for testing data
 
-<img width="452" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/1ba01ba7-16cf-4d19-be22-74067e40eb9b">
+```
+from sklearn.tree import DecisionTreeClassifier
+model = DecisionTreeClassifier(max_depth=7 ,min_samples_leaf=6 ,min_samples_split=4)
+model.fit(X_train,y_train)
+test_predicted = model.predict(X_test)
+train_predicted = model.predict(X_train)
+
+from sklearn.metrics import accuracy_score
+
+train_accuracy = f1_score(y_train, train_predicted,average=None)
+test_accuracy = f1_score(y_test, test_predicted,average=None)
+print('DecisionTreeClassifier training accuracy is', train_accuracy)
+print('DecisionTreeClassifier test accuracy is', test_accuracy)
+
+```
 
 ### Random Forest Classifier:
 It is an assembling method that operates by constructing a multi-decision tree and it got a 61% F1 score for testing data
 
-<img width="433" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/44510af2-4928-4112-bbba-f07ef13b87c7">
+```
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100, max_depth=2, random_state=0)
+model.fit(X_train,y_train)
+test_predicted = model.predict(X_test)
+train_predicted = model.predict(X_train)
+
+from sklearn.metrics import accuracy_score
+train_accuracy = f1_score(y_train, train_predicted,average=None)
+test_accuracy = f1_score(y_test, test_predicted,average=None)
+print('RandomForestClassifier training accuracy is', train_accuracy)
+print('RandomForestClassifier test accuracy is', test_accuracy)
+```
 
 ### Gaussian NB:
 It works based on Navies Bayes with strong independence assumption and Testing accuracy of 49 for one of the classifier 
 
-<img width="390" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/0926eed8-3eff-40cb-9dde-025b31979800">
+```
+from sklearn.naive_bayes import GaussianNB
+model = GaussianNB()
+model.fit(X_train, y_train)
+final = model.predict(X_test)
+
+test_predicted = model.predict(X_test)
+train_predicted = model.predict(X_train)
+
+from sklearn.metrics import accuracy_score
+train_accuracy = f1_score(y_train, train_predicted,average=None)
+test_accuracy = f1_score(y_test, test_predicted,average=None)
+print('GaussianNB training accuracy is', train_accuracy)
+print('GaussianNB test accuracy is', test_accuracy)
+```
 
 ### Voting Classifier:
 The voting classifier aggregates the results from the above classifier and takes the majority vote to decide if a particular object belongs to a class or not.
 
-<img width="393" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/99ec359e-3cd8-4ffc-8f06-ef2284854c66">
+```
+from sklearn.ensemble import VotingClassifier
+from sklearn import svm
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+m1= GaussianNB()
+m2=svm.SVC(kernel='poly')
+m3=RandomForestClassifier(n_estimators=100, max_depth=2, random_state=0)
+m4=DecisionTreeClassifier(max_depth=7 ,min_samples_leaf=6 ,min_samples_split=4)
+eclf1 = VotingClassifier(estimators=[ ('gnb', m1), ('rf', m3), ('dtc', m4),('svm',m2)], voting='hard')
+eclf1.fit(X_train, y_train)
+test_predicted = eclf1.predict(X_test)
+train_predicted = eclf1.predict(X_train)
 
+from sklearn.metrics import accuracy_score
+train_accuracy = accuracy_score(y_train, train_predicted)
+test_accuracy = accuracy_score(y_test, test_predicted)
+print('Ensemble training accuracy is', train_accuracy)
+print('Ensemble test accuracy is', test_accuracy)
+```
 # Outcome
 The outcome of our project we have found the spreading point of forest fire in Montesinho Natural Park and we have plotted the point on the map.
 
