@@ -3,6 +3,7 @@ Table of Content
  * [Data Source](#Data-Source)
  * [Data Cleaning](#Data-Cleaning)
  * [Some Cool Data Analysis Images](#Some-Cool-Data-Analysis-Images)
+   * [Burnt Area with respect to Months](#Burnt-Area-with-respect-to-Months)
  * [Evaluation and Training of Models](#Evaluation-and-Training-of-Models)
  * [Outcome](#Outcome)
 
@@ -21,7 +22,7 @@ Forest Fires are becoming a bigger problem and a recent survey shows that at lea
 * Structural errors have been rectified, and any data that had the characters "-", "NA" or "" have been corrected by giving them a default value.
 * Records that lacked necessary information were deleted.
 
-# Some Cool Data Analysis Images : 
+# Some Cool Data Analysis Images
 
 ### Burnt Area with respect to Months
 
@@ -70,7 +71,7 @@ The voting classifier aggregates the results from the above classifier and takes
 
 <img width="393" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/99ec359e-3cd8-4ffc-8f06-ef2284854c66">
 
-# Outcome : 
+# Outcome
 The outcome of our project we have found the spreading point of forest fire in Montesinho Natural Park and we have plotted the point on the map.
 
 <img width="317" alt="image" src="https://github.com/madhuammulu8/Forest-Fires-Prediction-using-Spatial-Data/assets/65707202/648f7d3a-070e-4206-99ee-737fbeb151b1">
